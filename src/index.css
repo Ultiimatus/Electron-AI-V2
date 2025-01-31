@@ -1,0 +1,276 @@
+/* === Ogólne ustawienia strony === */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #1a1a1a;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+}
+
+#root {
+  display: flex;
+  flex: 1;
+}
+
+/* === Pasek boczny (sidebar) === */
+.sidebar {
+  width: 320px;
+  padding: 15px;
+  background-color: #202124;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #333;
+}
+
+/* Nagłówek sidebaru */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 5px;
+}
+
+.sidebar-header img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+/* Sekcje sidebaru */
+.sidebar-section,
+.sidebar-footer {
+  background-color: #2a2b2e;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.sidebar-section-header,
+.sidebar-footer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.sidebar-section-header h3,
+.sidebar-footer-header h3 {
+  margin: 0;
+  font-size: 0.95em;
+  font-weight: 500;
+}
+
+/* Zawartość sekcji */
+.sidebar-section-content {
+  padding: 10px 0;
+}
+
+.sidebar-section-content div {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  font-size: 0.85em;
+}
+
+.sidebar-section-content div::before {
+  content: '✓';
+  color: #52c41a;
+  margin-right: 5px;
+}
+
+.sidebar-section-content input,
+.sidebar-footer-content textarea {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 3px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 0.85em;
+}
+
+.sidebar-footer-content textarea {
+  height: 100px;
+  resize: none;
+}
+
+/* === Główna zawartość === */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Karty zakładek === */
+.code-preview-tabs,
+.terminal-tabs {
+  display: flex;
+  background-color: #2a2b2e;
+  padding: 8px;
+  border-bottom: 1px solid #333;
+}
+
+.code-preview-tabs button,
+.terminal-tabs button {
+  background-color: transparent;
+  color: #9aa0a6;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  font-size: 0.9em;
+}
+
+.code-preview-tabs button.active,
+.terminal-tabs button.active {
+  border-bottom-color: #52c41a;
+  color: #fff;
+}
+
+/* === Edytor kodu === */
+.code-editor {
+  flex: 1;
+  display: flex;
+  background-color: #2a2b2e;
+}
+
+.code-editor-files {
+  width: 200px;
+  background-color: #202124;
+  padding: 10px;
+  border-right: 1px solid #333;
+}
+
+.code-editor-files div {
+  padding: 8px;
+  cursor: pointer;
+  font-size: 0.85em;
+  color: #9aa0a6;
+}
+
+.code-editor-files div.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.code-editor-content {
+  flex: 1;
+  padding: 10px;
+  font-size: 0.85em;
+}
+
+.code-editor-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: 'Roboto Mono', monospace;
+}
+
+/* === Terminal === */
+.terminal {
+  background-color: #202124;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #333;
+}
+
+.terminal-content {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: 0.85em;
+}
+
+.terminal-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: 'Roboto Mono', monospace;
+}
+
+/* === Nagłówek kodu === */
+.code-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+  background-color: #2a2b2e;
+  border-bottom: 1px solid #333;
+}
+
+.code-header button {
+  background-color: transparent;
+  color: #9aa0a6;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 0.9em;
+}
+
+.code-header button:hover {
+  color: #fff;
+}
+
+/* === Chat === */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  border: 1px solid #333;
+  overflow-y: auto;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 10px;
+}
+
+.chat-message {
+  margin-bottom: 5px;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.chat-message.user {
+  background-color: #444;
+  align-self: flex-end;
+}
+
+.chat-message.ai {
+  background-color: #333;
+  align-self: flex-start;
+}
+
+.chat-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #333;
+}
+
+.chat-input textarea {
+  flex: 1;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  margin-right: 10px;
+  resize: none;
+}
+
+.chat-input button {
+  background-color: #52c41a;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
